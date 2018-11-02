@@ -35,9 +35,22 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copyTpl(this.templatePath(), this.destinationRoot(), this.props, undefined, {
+    // .prettierrc
+    // .babelrc
+    // .eslintrc
+    // .gitignore
+    // .nvmrc
+
+    this.fs.copy(this.templatePath('.*'), this.destinationRoot(), this.props, {
       globOptions: {
         dot: true,
+        ignore: ['.DS_STORE', '.cache', '.vscode', '.git', 'node_modules', 'dist']
+      }
+    });
+
+    this.fs.copyTpl(this.templatePath(), this.destinationRoot(), this.props, undefined, {
+      globOptions: {
+        dot: false,
         ignore: ['.DS_STORE', '.cache', '.vscode', '.git', 'node_modules', 'dist']
       }
     });
