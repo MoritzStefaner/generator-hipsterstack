@@ -1,7 +1,7 @@
 {
   "name": "generator-hipsterstack",
   "version": "0.0.0",
-  "description": "Set up a basic project scaffold using our one and only Hipsterstack(tm)",
+  "description": "Set up a basic project scaffold using the one and only Hipsterstack(tm)",
   "homepage": "",
   "author": {
     "name": "Moritz Stefaner",
